@@ -13,7 +13,7 @@ type Greeter struct {
 }
 
 // 構造体はTalkerインタフェースで定義されているメソッドを持っている
-func (g Greeter) Talk() {
+func (g *Greeter) Talk() {
 	fmt.Printf("Hello, my name is %s\n", g.name)
 }
 
