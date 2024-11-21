@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"net"
+	"net/http"
 	"os"
 	"strings"
 )
@@ -37,4 +39,19 @@ func main() {
 	var builder strings.Builder
 	builder.Write([]byte("strings.Builder example\n"))
 	fmt.Println(builder.String())
+
+	// net.Dial
+	conn, err := net.Dial("tcp", "example.com:80")
+	if err != nil {
+		panic(err)
+	}
+	io.WriteString(conn, "GET / HTTP/1.0\r\nHost: example.com\r\n\r\n")
+	io.Copy(os.Stdout, conn)
+
+	// net/http
+	req, err := http.NewRequest("GET", "http://example.com", nil)
+	if err != nil {
+		panic(err)
+	}
+	req.Write(conn)
 }
