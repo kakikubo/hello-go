@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -31,4 +32,9 @@ func main() {
 	// io.WriteString関数を使えばキャストは不要になる
 	io.WriteString(&buffer, "bytes.Buffer example3\n")
 	fmt.Println(buffer.String())
+
+	// strings.Builder
+	var builder strings.Builder
+	builder.Write([]byte("strings.Builder example\n"))
+	fmt.Println(builder.String())
 }
