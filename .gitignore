@@ -26,3 +26,4 @@ go.work
 .idea/
 test.txt*
 multiwriter.txt
+test.csv
