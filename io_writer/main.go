@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"compress/gzip"
 	"fmt"
 	"io"
 	"net"
@@ -62,4 +63,16 @@ func main() {
 	}
 	writer := io.MultiWriter(file, os.Stdout)
 	io.WriteString(writer, "io.MultiWriter example\n")
+
+	// gzip
+	file, err = os.Create("test.txt.gz")
+	if err != nil {
+		panic(err)
+	}
+	writer = gzip.NewWriter(file)
+	// 書籍のサンプルではうまくいかないのでCopilotだより
+	gzipWriter := writer.(*gzip.Writer)
+	gzipWriter.Name = "test.txt"
+	io.WriteString(writer, "gzip.Writer example\n")
+	gzipWriter.Close()
 }
