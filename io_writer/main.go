@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"compress/gzip"
 	"fmt"
@@ -75,4 +76,11 @@ func main() {
 	gzipWriter.Name = "test.txt"
 	io.WriteString(writer, "gzip.Writer example\n")
 	gzipWriter.Close()
+
+	// bufio.Writer
+	buffer2 := bufio.NewWriter(os.Stdout)
+	buffer2.WriteString("bufio.Writer ")
+	buffer2.Flush()
+	buffer2.WriteString("example\n")
+	buffer2.Flush()
 }
