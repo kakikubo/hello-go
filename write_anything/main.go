@@ -10,8 +10,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	number := 10
-	string := "Hello, World!"
-	float := 3.14
-	fmt.Fprintf(file, "number: %d\nstring: %s\nfloat: %f\n", number, string, float)
+	num := 10
+	str := "Hello, World!"
+	fl := 3.14
+	fmt.Fprintf(file, "number: %d\nstring: %s\nfloat: %f\n", num, str, fl)
 }
