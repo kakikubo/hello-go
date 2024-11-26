@@ -50,6 +50,14 @@ subgraph syscall
 end
 ```
 
+## gpコマンドのインストール
+
+<https://github.com/tenntenn/goplayground>
+
+```bash
+go install github.com/tenntenn/goplayground/cmd/gp@latest
+```
+
 ## fmt.Scanln関数
 
 https://go.dev/play/p/F6_TPUeLa7X
