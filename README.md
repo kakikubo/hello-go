@@ -49,3 +49,18 @@ subgraph syscall
   internal/poll/fd_windows.go.FD.writeConsole((FD.writeConsole)) --> syscall.WriteConsole((WriteConsole))
 end
 ```
+
+## fmt.Scanln関数
+
+https://go.dev/play/p/F6_TPUeLa7X
+標準入力から値をポインタで読み取り、変数に格納する。
+```go
+package main
+import "fmt"
+func main() {
+  var price int
+  fmt.Print("値段>")
+  fmt.Scanln(&price)
+  fmt.Printf("%d円\n", price)
+}
+```
