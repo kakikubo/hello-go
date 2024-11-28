@@ -7,13 +7,13 @@ func main() {
 			a | b | c | 結果
 			--|---|---|-----
 			0 | 0 | 0 | true
-			1 | 0 | 0 | true
-			1 | 1 | 0 | true
-			0 | 1 | 0 | true
 			0 | 0 | 1 | false
-			1 | 0 | 1 | false
-			1 | 1 | 1 | true
+			0 | 1 | 0 | true
 			0 | 1 | 1 | false
+			1 | 0 | 0 | true
+			1 | 0 | 1 | false
+			1 | 1 | 0 | true
+			1 | 1 | 1 | true
 	*/
 	a, b, c = false, true, true
 	if a && b || !c {
