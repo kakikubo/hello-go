@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/kakikubo/hello-go/greeting"
+)
 
 func main() {
 	fmt.Println("Hello, World!")
@@ -11,4 +14,7 @@ func main() {
 	str := string([]byte{0x41, 0x53, 0x43, 0x49, 0x49})
 	fmt.Printf("%#v\n", str) // "ASCII"
 
+	// greetingパッケージのDo関数を呼び出す
+	message := greeting.Do()
+	fmt.Println(message)
 }
